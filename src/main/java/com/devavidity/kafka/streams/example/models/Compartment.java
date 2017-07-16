@@ -1,5 +1,6 @@
 package com.devavidity.kafka.streams.example.models;
 
+import com.devavidity.kafka.streams.example.utils.LoadLevel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -17,7 +18,7 @@ public class Compartment {
     private int compartmentId;
 
     @JsonProperty
-    private String loadLevel;
+    private LoadLevel loadLevel;
 
     @JsonProperty
     private int in;
@@ -44,11 +45,11 @@ public class Compartment {
         this.compartmentId = compartmentId;
     }
 
-    public String getLoadLevel() {
+    public LoadLevel getLoadLevel() {
         return loadLevel;
     }
 
-    public void setLoadLevel(String loadLevel) {
+    public void setLoadLevel(LoadLevel loadLevel) {
         this.loadLevel = loadLevel;
     }
 
@@ -85,8 +86,12 @@ public class Compartment {
     }
 
     @JsonIgnore
-    public String toJson() throws JsonProcessingException {
-        return mapper.writeValueAsString(this);
+    public String toJson() {
+        try {
+            return mapper.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            return null;
+        }
     }
 
 }
