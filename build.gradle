@@ -6,12 +6,16 @@ buildscript {
         }
     }
     dependencies {
-        classpath "com.github.jengelman.gradle.plugins:shadow:2.0.1"
+        classpath "com.github.jengelman.gradle.plugins:shadow:1.2.4"
     }
 }
 
+
 apply plugin: 'java'
+apply plugin: 'application'
 apply plugin: "com.github.johnrengelman.shadow"
+
+mainClassName = 'com.devavidity.kafka.streams.example.Application'
 
 repositories {
     jcenter()
@@ -25,3 +29,11 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '3.8.2'
 }
 
+shadowJar {
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}

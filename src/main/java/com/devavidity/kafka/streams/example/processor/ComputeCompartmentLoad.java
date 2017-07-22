@@ -21,6 +21,7 @@ public class ComputeCompartmentLoad implements Processor<String, String> {
     @Override
     public void process(String key, String value) {
         try {
+            System.out.println(value);
             Compartment compartment = objectMapper.readValue(value, Compartment.class);
             int load = compartment.getIn() - compartment.getOut();
             int capacity = load / compartment.getCapacity() * 100;

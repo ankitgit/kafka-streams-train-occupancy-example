@@ -16,4 +16,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'kafka-streams-train-occupancy-example'
+//rootProject.name = 'kafka-streams-train-occupancy-example'
