@@ -13,5 +13,5 @@ Its just a play app to learn a bit about kafka stream.
 
 ## Running via docker image
 * execute build.sh
-* Run: docker run -d -e B=<bootstrap server address> -e IT=<input Topic name> -e OT=<output topic name> --name <name of the container> train-occupancy-example
+* Run: docker run -d -e B=[bootstrap server address] -e IT=[input Topic name] -e OT=[output topic name] --name [name of the container] train-occupancy-example
 * Note: The environment variables are completely optional
