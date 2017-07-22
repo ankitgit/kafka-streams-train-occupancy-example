@@ -11,7 +11,7 @@ Its just a play app to learn a bit about kafka stream.
 * Or: java -jar kafka-streams-train-occupancy-example-all.jar -P application.properties -B 0.0.0.0:9092 -IT input_topic -OT output_topic.
 * Note: If you want to override the default properties in application.properties you can use the flag -B for boot server, -IT for input topic, -OT for output topic.
 
-##Running via docker image
+## Running via docker image
 * execute build.sh
 * Run: docker run -d -e B=<bootstrap server address> -e IT=<input Topic name> -e OT=<output topic name> --name <name of the container> train-occupancy-example
 * Note: The environment variables are completely optional
