@@ -31,6 +31,9 @@ public class Compartment {
     @JsonProperty
     private int capacity;
 
+    public Compartment() {
+    }
+
     public Compartment(int vehicleId, int compartmentId, int in, int out, int capacity) {
         this.vehicleId = vehicleId;
         this.compartmentId = compartmentId;

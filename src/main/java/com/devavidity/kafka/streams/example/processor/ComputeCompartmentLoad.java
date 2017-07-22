@@ -24,7 +24,7 @@ public class ComputeCompartmentLoad implements Processor<String, String> {
             System.out.println(value);
             Compartment compartment = objectMapper.readValue(value, Compartment.class);
             int load = compartment.getIn() - compartment.getOut();
-            int capacity = load / compartment.getCapacity() * 100;
+            int capacity = (load * 100 / compartment.getCapacity());
 
             if (capacity >= 70) {
                 compartment.setLoadLevel(LoadLevel.HIGH);
